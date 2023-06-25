@@ -1,0 +1,4 @@
+sshkeypath: ./id_rsa
+username: masoud
+port: 22
+# password: 12345

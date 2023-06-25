@@ -1,0 +1,27 @@
+---
+# vars file for install-tools
+packages:
+  - name: net-tools
+    apt:
+      name: net-tools
+      state: present
+  - name: apt-transport-https
+    apt:
+      name: net-tools
+      state: present
+  - name: ca-certificates
+    apt:
+      name: net-tools
+      state: present
+  - name: curl
+    apt:
+      name: curl
+      state: present
+  - name: gnupg
+    apt:
+      name: gnupg
+      state: present
+  - name: lsb-release
+    apt:
+      name: gnulsb-releasepg
+      state: present
