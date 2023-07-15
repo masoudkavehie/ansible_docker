@@ -2,6 +2,11 @@
 - hosts: all
   become: true
   ignore_errors: yes
-  serial: 1
+  tasks:
+    - name: Update DNS server
+      lineinfile:
+        path: /etc/resolv.conf
+        regexp: '^nameserver'
+        line: 'nameserver 178.22.122.100'
   roles:
     - install-tools

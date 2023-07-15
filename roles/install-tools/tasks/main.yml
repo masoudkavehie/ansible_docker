@@ -1,9 +1,14 @@
 ---
 - name: Install packages
   apt:
-    name: "{{ item.name }}"
+    name: "{{ item }}"
     state: present
-  loop: "{{ packages }}"
+  loop:
+    - curl
+    - ca-certificates
+    - gnupg
+    - net-tools
+
 - name: Add Docker GPG key
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
@@ -23,10 +28,10 @@
     state: present
   loop:
     - docker-ce-cli
+    - docker-ce
     - containerd.io
     - docker-buildx-plugin
     - docker-compose-plugin
-    - docker-ce-rootless-extras
 - name: Add user to docker group
   user:
     name: "{{ ansible_user }}"
